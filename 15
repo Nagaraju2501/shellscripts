@@ -15,7 +15,7 @@ echo -n "Enter your menu choice [1-4]: "
 # User will be asked to select option again and again
 while :
 do
-
+-------
 # reading choice
 read choice
 
@@ -39,3 +39,29 @@ case $choice in
 esac
   echo -n "Enter your menu choice [1-4]: "
 done
+-----------------------
+echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+echo -e "Computer CPU Information:" >> /tmp/info.tmp.01.$$$ 
+echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+cat /proc/cpuinfo >> /tmp/info.tmp.01.$$$
+
+echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+echo -e "Computer Memory Information:" >> /tmp/info.tmp.01.$$$
+--------
+15
+
+-----
+if [ -f /etc/sysconfig/mouse ]
+then
+    echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+    echo -e "Computer Mouse Information: " >> /tmp/info.tmp.01.$$$
+    echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+    echo -e "`cat /etc/sysconfig/mouse`" >> /tmp/info.tmp.01.$$$ 
+fi
+"--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+echo -e "Computer Memory Information:" >> /tmp/info.tmp.01.$$$ 
+echo -e "--------------------------------------------------------------------" >> /tmp/info.tmp.01.$$$ 
+cat /proc/meminfo >> /tmp/info.tmp.01.$$$
+From 215716-Manjunatha G B to Everyone 01:25 PM
+fi
+fi

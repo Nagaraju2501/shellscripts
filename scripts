@@ -1,0 +1,49 @@
+24 th
+if [ $# -eq 1 ]
+then
+        if [ -d $1 ]
+        then
+                swps=(`find $1 -name "*.swp" -type f`)
+                if [ ${#swps[@]} -ne 0 ]
+                then
+                        find $1 -name "*.swp" -type f -delete
+                else
+                        echo "No swp files found in test_swp."
+                fi
+        else
+                echo "Error : '$1' no such a file or directory"
+        fi
+else
+        swps=(`find ~ -name "*.swp" -type f`)
+        if [ ${#swps[@]} -ne 0 ]
+        then
+                echo "swap file found :"
+                find ~ -name "*.swp" -type f
+        fi
+fi
+-------
+26 th
+if [ $# -lt 1 ]
+then
+        echo "Error: Invalid input. Enter a minimum of 1 arg (directory)]"
+        exit 1
+fi
+
+myDirectoryArray=($@)
+
+#check for valid directory
+for (( i=0; i < ${#myDirectoryArray[@]}; i++ ))
+do
+        if [ ! -d ${myDirectoryArray[$i]} ]
+        then
+                echo "${myDirectoryArray[$i]} is not a directory"
+        else
+                #if valid, change to that directory and list
+                echo "${myDirectoryArray[$i]}: "
+                cd ${myDirectoryArray[$i]};ls
+        fi
+done
+35th
+sed -i $((1 + RANDOM 20 ))d file.txt
+ 34th
+awk -F: '{print $1}' /etc/passwd

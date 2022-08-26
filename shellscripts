@@ -75,3 +75,30 @@ pwd
 ps –e
 top
 logout
+---------------------
+#!/bin/bash
+# Example 0 : While loop. Keeping looping while i is less than 10
+# The first line creates a variable. Note that to read a
+# variable you need to put a ’$’ before its name
+i=0
+while [ $i -lt 10 ]
+do
+echo i is $i
+let i=$i+1
+done
+-----------------
+#!/bin/bash
+# example 2: For Loop.
+# Do a letter, word and line count of all the files in
+# the current directory.
+# The ‘*’ below is expanded to a list of files. The
+# variable ‘file’ successively takes the value of
+# these filenames. Preceding a variable name by ‘$’
+# gives its value.
+for file in *
+do
+echo "wc $file gives"
+wc $file
+done
+------------------
+

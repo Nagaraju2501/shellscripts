@@ -3,3 +3,15 @@ echo "Type a word"
 read word
 echo $word is $(echo -n $word | wc -c) letters long
 echo or $word is ${#word} letters long
+------------------
+
+for file in *
+do
+if [ ! -d $file ] #ie: if $file isn’t a directory
+then
+echo "wc $file ownerID, permisions, size, date are"
+wc $file
+else
+echo "$file is a directory"
+fi
+done

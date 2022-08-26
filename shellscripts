@@ -101,4 +101,22 @@ echo "wc $file gives"
 wc $file
 done
 ------------------
+colors[1]=red
+colors[2]=green
+colors[3]=blue
+echo The array colors has ${#colors[*]} elements.
+echo They are ${colors[*]}
+--------
+#!/bin/sh
+times=$(who | grep $1 | wc -l)
+echo "$1 is logged on $times times."
+------------
+for file in $*
+do
+if [ -d $file ]
+then
+10
+ls $file
+fi
+done
 
